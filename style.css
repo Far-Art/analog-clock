@@ -226,7 +226,7 @@ a {
     filter: hue-rotate(140deg) saturate(100%);
 }
 
-@supports (backdrop-filter: blur(0)) or (-webkit-backdrop-filter: blur(0)) or (-moz-backdrop-filter: blur(0)){
+@supports (backdrop-filter: blur(0)) or (-webkit-backdrop-filter: blur(0)) or (-moz-backdrop-filter: blur(0)) or (-ms-backdrop-filter: blur(0)){
     #container {
         backdrop-filter: blur(25px);
         background: rgba(37, 36, 44, 0.25);
