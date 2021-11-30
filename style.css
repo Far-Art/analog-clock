@@ -1,0 +1,235 @@
+@import url("https://fonts.googleapis.com/css2?family=Poiret+One&display=swap");
+
+body {
+    --size-width: clamp(300px, 25vw, 500px);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    background: rgb(27, 15, 49);
+    overflow: hidden;
+}
+
+body::before {
+    content: "";
+    background: url("./assets/neon-bars.svg") no-repeat;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+    top: -15%;
+}
+
+h1 {
+    font-size: 4rem;
+    margin: 7% 0;
+    padding: 0;
+    font-family: "Poiret One", cursive;
+}
+
+a {
+    position: absolute;
+    bottom: 2%;
+    color: white;
+    z-index: 9999;
+    font-size: 1.16rem;
+    padding: 10px;
+}
+
+#container {
+    position: relative;
+    display: grid;
+    place-items: center;
+    background: rgba(37, 36, 44, 0.9);
+    min-width: var(--size-width);
+    width: var(--size-width);
+    aspect-ratio: 1;
+    border-radius: 100vw;
+    z-index: 2;
+    margin: 2% 0;
+}
+
+.container-decorative-element {
+    position: absolute;
+    width: calc(var(--size-width) * 0.9);
+    aspect-ratio: 1;
+    border-radius: 100vw;
+    z-index: 1;
+    box-shadow: 0 0 256px rgba(0, 0, 0, 0.7);
+}
+
+.center-dot {
+    position: absolute;
+    width: calc(var(--size-width) * 0.06);
+    height: calc(var(--size-width) * 0.06);
+    border-radius: 100vw;
+    z-index: 5;
+    mix-blend-mode: screen;
+}
+
+.gradation-mark {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: inherit;
+    z-index: 2;
+}
+.gradation-mark::before {
+    position: absolute;
+    content: "";
+    width: calc(var(--size-width) * 0.03);
+    aspect-ratio: 6/1;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 0 100vw 100vw 0;
+}
+
+.gradation-mark::before {
+    top: 0;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+/* 5 min section mark */
+.bold::before {
+    width: calc(var(--size-width) * 0.045);
+    aspect-ratio: 3/1;
+    background: rgba(255, 255, 255, 0.8);
+}
+
+/* hours mark */
+.extra-bold::before {
+    width: calc(var(--size-width) * 0.04);
+    aspect-ratio: 1/1;
+    background: rgba(255, 255, 255, 0.8);
+}
+
+/* millisecond section mark */
+.millis::before {
+    width: calc(var(--size-width) * 0.015);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.arrow,
+.arrow > * {
+    position: absolute;
+    top: 50%;
+    z-index: 4;
+    /* transition makes box shadow flicker, still no workaround found */
+    /* transition: all 100ms cubic-bezier(1, 0.16, 0.17, 2.02),
+        box-shadow ease-in-out 1s; */
+}
+
+.arrow::after {
+    content: "";
+    position: absolute;
+    width: 50%;
+    border-radius: 100vw;
+    transform: translateY(-50%);
+}
+
+.seconds-arrow {
+    width: 88%;
+}
+
+.seconds-arrow::after {
+    background: white;
+    width: 10%;
+    height: calc(var(--size-width) * 0.01);
+}
+
+.minutes-arrow {
+    width: 70%;
+}
+
+.minutes-arrow::after {
+    background: white;
+    height: calc(var(--size-width) * 0.005);
+}
+
+.hours-arrow {
+    width: 40%;
+}
+
+.hours-arrow::after {
+    background: white;
+    height: calc(var(--size-width) * 0.025);
+}
+
+/* set time display distance */
+.seconds-arrow > * {
+    top: -15px;
+    left: -38%;
+    font-size: 1.3rem;
+}
+
+.minutes-arrow > * {
+    top: -15px;
+    left: -50%;
+    font-size: 2rem;
+}
+
+.hours-arrow > * {
+    top: -15px;
+    left: -110%;
+    font-size: 2.4rem;
+}
+
+.neon,
+.neon::before,
+.neon::after {
+    background: white;
+    box-shadow: 0 0 7px white, 0 0 10px white, 0 0 20px white,
+        0 0 40px rgb(0, 255, 170), 0 0 80px rgb(0, 255, 170),
+        0 0 90px rgb(0, 255, 170), 0 0 100px rgb(0, 255, 170),
+        0 0 100px rgb(0, 255, 170);
+}
+
+.neon-dim,
+.neon-dim::before,
+.neon-dim::after {
+    background: white;
+    box-shadow: 0 0 3px white, 0 0 5px white, 0 0 7px white,
+        0 0 10px rgb(0, 255, 170), 0 0 15px rgb(0, 255, 170),
+        0 0 30px rgb(0, 255, 170), 0 0 35px rgb(0, 255, 170),
+        0 0 45px rgb(0, 255, 170);
+}
+
+.neon-text-green,
+.neon-text-green::before,
+.neon-text-green::after {
+    color: white;
+    text-shadow: 0 0 6px white, 0 0 10px white, 0 0 15px white,
+        0 0 5px rgb(0, 0, 0), 0 0 15px rgb(0, 0, 0), 0 0 30px rgb(0, 0, 0),
+        0 0 30px rgb(0, 255, 170), 0 0 35px rgb(0, 255, 170),
+        0 0 40px rgb(0, 255, 170), 0 0 50px rgb(0, 255, 170),
+        0 0 60px rgb(0, 255, 170);
+}
+
+.time-display {
+    position: absolute;
+    display: grid;
+    align-items: center;
+    text-align: center;
+    font-family: "Poiret One", cursive;
+    font-weight: bold;
+}
+
+.hue-rotate-1 {
+    filter: hue-rotate(100deg) saturate(180%);
+}
+
+.hue-rotate-2 {
+    filter: hue-rotate(140deg) saturate(100%);
+}
+
+@supports (backdrop-filter: blur(0)) {
+    #container {
+        backdrop-filter: blur(25px);
+        background: rgba(37, 36, 44, 0.25);
+    }
+}
