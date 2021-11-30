@@ -1,12 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Poiret+One&display=swap");
 
 body {
-    --size-width: clamp(300px, 20vw, 500px);
+    --size-width: clamp(200px, 20vw, 500px);
 
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: stretch;
     width: 100vw;
     height: 100vh;
     position: relative;
@@ -163,20 +163,19 @@ a {
 /* set time display distance */
 .seconds-arrow > * {
     top: -15px;
-    left: -38%;
-    font-size: 1.3rem;
+    left: -35%;
 }
 
 .minutes-arrow > * {
     top: -15px;
     left: -50%;
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 
 .hours-arrow > * {
     top: -15px;
     left: -110%;
-    font-size: 2.4rem;
+    font-size: 2rem;
 }
 
 .neon,
